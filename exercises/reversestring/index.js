@@ -14,7 +14,13 @@ function reverse(str) {
 module.exports = reverse;
 
 /*
-// Solution 2 - for
+
+// Solution 1 with reverse()
+function reverse(str) {
+  return str.split('').reverse().join('');
+}
+
+// Solution 3 - for of
 function reverse(str) {
   let reversed = '';
 
@@ -25,9 +31,17 @@ function reverse(str) {
   return reversed;
 }
 
-
-// Solution 1 with reverse()
+// Solution 3 with for loop
 function reverse(str) {
-  return str.split('').reverse().join('');
+  let strArr = str.split('');
+  let newArr = [];
+
+  for (let i = 0; i < strArr.length; i++) {
+    let last = strArr.pop();
+    newArr.push(last);
+  }
+
+  return newArr.join('');
 }
+
 */
